@@ -41,7 +41,7 @@ const scraperObject = {
                 scrapedData.push(currentPageData);
             }
             
-            // [다음] 버튼 href value을 이용해서 마지막 페이지까지 재귀적으로 탐색
+            // [다음] 버튼 href value를 이용해서 마지막 페이지까지 재귀적으로 탐색
             let tmp = await page.$$eval('#paginate > nav > ul > li', lis => {
                 return lis.map(li => li.querySelector('a').href)
             });
@@ -53,8 +53,7 @@ const scraperObject = {
             return scrapedData;
         }
         let data = await scrapeCurrentPage();
-        console.log(data);
-        // return data;
+        return data;
     }
 }
 
