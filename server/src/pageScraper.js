@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://programmers.co.kr/job',
+    url: 'https://programmers.co.kr/job?page=33',
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -22,6 +22,7 @@ const scraperObject = {
                 let newPage = await browser.newPage();
                 await newPage.goto(link);
 
+                dataObj['source'] = 'programmers';
                 dataObj['postTitle'] = await newPage.$eval('header > div > h2', el => {
                     return el.textContent.replace(/\s+/g,'');
                 });
