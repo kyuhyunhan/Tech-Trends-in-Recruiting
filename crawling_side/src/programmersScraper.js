@@ -1,8 +1,9 @@
 const scraperObject = {
-    url: 'https://programmers.co.kr/job?page=33',
+    url: 'https://programmers.co.kr/job',
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
+        await page.setDefaultNavigationTimeout(0);
         await page.goto(this.url);
 
         let scrapedData = [];
@@ -20,13 +21,14 @@ const scraperObject = {
             let pagePromise = (link) => new Promise(async(resolve, reject) => {
                 let dataObj = {};
                 let newPage = await browser.newPage();
+                await newPage.setDefaultNavigationTimeout(0);
                 await newPage.goto(link);
 
                 dataObj['source'] = 'programmers';
+                dataObj['postCompany'] = await newPage.$eval('header > div> h4', el => el.textContent);
                 dataObj['postTitle'] = await newPage.$eval('header > div > h2', el => {
                     return el.textContent.replace(/\s+/g,'');
                 });
-                dataObj['postCompany'] = await newPage.$eval('header > div> h4', el => el.textContent);
                 dataObj['techStack'] = await newPage.$$eval('.heavy-use > td > code', stack => {
                     stack = stack.map(tech => tech.textContent);
                     return stack;
@@ -37,8 +39,8 @@ const scraperObject = {
                 await newPage.close();
             })
 
-            for (const url of urls) {
-                let currentPageData = await pagePromise(url);
+            for (const link of urls) {
+                let currentPageData = await pagePromise(link);
                 scrapedData.push(currentPageData);
             }
             

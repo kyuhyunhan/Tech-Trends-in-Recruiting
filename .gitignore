@@ -1,3 +1,45 @@
-server/node_modules/
-server/.env
-server/*.json
+##############################
+# server
+
+crawling_side/node_modules/
+crawling_side/.env
+crawling_side/test_result/
+
+##############################
+# client
+
+# dependencies
+my-app/node_modules
+my-app/.pnp
+my-app/.pnp.js
+
+# testing
+my-app/coverage
+
+# next.js
+my-app/.next/
+my-app/out/
+
+# production
+my-app/build
+
+# misc
+my-app/.DS_Store
+my-app/*.pem
+
+# debug
+my-app/npm-debug.log*
+my-app/yarn-debug.log*
+my-app/yarn-error.log*
+
+# local env files
+my-app/.env.local
+my-app/.env.development.local
+my-app/.env.test.local
+my-app/.env.production.local
+
+# vercel
+my-app/.vercel
+
+# dataset
+my-app/dataset
