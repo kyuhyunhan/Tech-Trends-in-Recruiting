@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://programmers.co.kr/job',
+    url: 'https://programmers.co.kr/job?page=35',
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
