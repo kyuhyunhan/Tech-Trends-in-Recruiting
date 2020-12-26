@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@weknow/react-bubble-chart-d3": "^1.0.12",
     "fs": "0.0.1-security",
     "next": "10.0.3",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
-  }
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "recharts": "^1.8.5"
+  },
+  "devDependencies": {}
 }

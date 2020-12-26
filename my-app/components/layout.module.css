@@ -1,0 +1,18 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    background-color: #e6e6e6;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: 
+      "header"
+      ".";
+  }
+  .header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
