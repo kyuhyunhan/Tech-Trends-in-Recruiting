@@ -45,13 +45,14 @@
   /* align-items: center;
   justify-items: center; */
   grid-template-rows: repeat(5, 400px);
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(2, 600px);
   grid-template-areas: 
-    "language language language"
-    "fetop3 statemgmt feetc"
-    "backend backend mobile"
-    "backend backend database"
-    "mldata etc etc";
+    "language language"
+    "fetop3 statemgmt"
+    "feetc mobile"
+    "backend database"
+    "backend mldata"
+    "etc etc";
   max-width: 1200px;
   margin-top: 3rem;
   border-radius: 15px;
