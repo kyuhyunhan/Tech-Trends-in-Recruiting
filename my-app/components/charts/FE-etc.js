@@ -19,15 +19,16 @@ export default class FE_FEEtc extends React.Component {
         return (
             <BubbleChart
                 graph= {{
-                    zoom: .2,
-                    offsetX: 0.05,
+                    zoom: .4,
+                    offsetX: 0.2,
                     offsetY: 0.01,
                 }}
-                width={900}
-                height={900}
+                width={1300}
+                height={1000}
+                overflow={true}
                 padding={0} // optional value, number that set the padding between bubbles
-                showLegend={false} // optional value, pass false to disable the legend.
-                legendPercentage={20} // number that represent the % of with that legend going to use.
+                showLegend={true} // optional value, pass false to disable the legend.
+                legendPercentage={40} // number that represent the % of with that legend going to use.
                 legendFont={{
                         family: 'Arial',
                         size: 12,

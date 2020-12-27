@@ -9,6 +9,9 @@ import Database from '../components/charts/database';
 import FE_Top3 from '../components/charts/FE-top3';
 import FE_StateMgmt from '../components/charts/FE-SML';
 import FE_FEEtc from '../components/charts/FE-etc';
+import BE from '../components/charts/BE';
+import CPM from '../components/charts/CPM';
+import ML_Data from '../components/charts/ML-data';
 
 export default function Home({ data }) {
   return (
@@ -53,17 +56,17 @@ export default function Home({ data }) {
 
           <span className={`${styles.chart} ${styles.backend}`}>
             <h3>웹 백엔드</h3>
-            [Recharts]sunburst
+            <BE data={data.BE}/>
           </span>
           
           <span className={`${styles.chart} ${styles.mobile}`}>
             <h3>Cross-platform mobile</h3>
-            [Recharts]PieChartWithPaddingAngle
+            <CPM data={data.cross_platform_mobile}/>
           </span>
 
           <span className={`${styles.chart} ${styles.mldata}`}>
             <h3>머신러닝 / 데이터 엔지니어링</h3>
-            [Recharts] 막대그래프
+            <ML_Data data={data.ML_data}/>
           </span>
 
           <span className={`${styles.chart} ${styles.etc}`}>

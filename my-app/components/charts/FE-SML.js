@@ -69,8 +69,8 @@ export default class FE_StateMgmt extends PureComponent {
                 activeIndex={this.state.activeIndex}
                 activeShape={renderActiveShape}
                 data={this.state.data}
-                cx={150}
-                cy={100}
+                cx={250}
+                cy={150}
                 innerRadius={60}
                 outerRadius={80}
                 fill="#8884d8"

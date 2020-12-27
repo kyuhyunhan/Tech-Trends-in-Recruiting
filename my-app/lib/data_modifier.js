@@ -5,6 +5,9 @@ export default function modifyData(data) {
     modifiedData = modifyFETop3(data);
     modifiedData = modifyFESML(data);
     modifiedData = modifyFEEtc(data);
+    modifiedData = modifyBE(data);
+    modifiedData = modifyCPM(data);
+    modifiedData = modifyMLData(data);
     return modifiedData;
 }
 function setToArray(rawData) {
@@ -16,6 +19,69 @@ function setToArray(rawData) {
                 return b.value - a.value;
             })
     return arrayData;
+}
+function modifyMLData(data) {
+    const rawMLData = data['ML_data'];
+    const modifiedMLData = setToArray(rawMLData);
+    data['ML_data'] = modifiedMLData;
+    return data;
+}
+
+
+function modifyCPM(data) {
+    const rawCPMData = data['cross_platform_mobile'];
+    const modifiedCPMData = setToArray(rawCPMData);
+    data['cross_platform_mobile'] = modifiedCPMData;
+    return data;
+}
+
+function modifyBE(data) {
+    const rawBEData = data['BE'];
+    const modifiedBEData = Object.keys(rawBEData).map((key) =>{
+        return {name:key, children:[]};
+    })
+
+    const rawJSData = data['BE']['JS'];
+    const modifiedJSData = Object.keys(rawJSData).map((key) =>{
+        return {name:key, size:rawJSData[key]}
+    })
+    const rawJavaData = data['BE']['Java'];
+    const modifiedJavaData = Object.keys(rawJavaData).map((key) =>{
+        return {name:key, size:rawJavaData[key]}
+    })
+    const rawPythonData = data['BE']['Python'];
+    const modifiedPythonData = Object.keys(rawPythonData).map((key) =>{
+        return {name:key, size:rawPythonData[key]}
+    })
+    const rawRubyData = data['BE']['Ruby'];
+    const modifiedRubyData = Object.keys(rawRubyData).map((key) =>{
+        return {name:key, size:rawRubyData[key]}
+    })
+    const rawPHPData = data['BE']['PHP'];
+    const modifiedPHPData = Object.keys(rawPHPData).map((key) =>{
+        return {name:key, size:rawPHPData[key]}
+    })
+    const rawEtcData = data['BE']['BEEtc'];
+    const modifiedEtcData = Object.keys(rawEtcData).map((key) =>{
+        return {name:key, size:rawEtcData[key]}
+    })
+    for(let object of modifiedBEData) {
+        if(object.name == 'JS') {
+            object.children = modifiedJSData;
+        } else if (object.name == 'Java') {
+            object.children = modifiedJavaData;
+        } else if (object.name == 'Python') {
+            object.children = modifiedPythonData;
+        } else if (object.name == 'Ruby') {
+            object.children = modifiedRubyData;
+        } else if (object.name = 'PHP') {
+            object.children = modifiedPHPData;
+        } else {
+            object.children = modifiedEtcData;
+        }
+    }
+    data['BE'] = modifiedBEData;
+    return data;
 }
 
 function modifyFEEtc(data) {
