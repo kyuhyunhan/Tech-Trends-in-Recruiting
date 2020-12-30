@@ -209,19 +209,19 @@ function modifyLanguage(data) {
             .map((elem) => {
                 switch(elem['name']){
                     case 'JAVASCRIPT':
-                        elem['name'] = 'JavaScript'; break;
+                        elem['name'] = 'JS'; break;
                     case 'JAVA':
                         elem['name'] = 'Java'; break;
                     case 'PYTHON':
                         elem['name'] = 'Python'; break;
                     case 'TYPESCRIPT':
-                        elem['name'] = 'TypeScript'; break;
+                        elem['name'] = 'TS'; break;
                     case 'SWIFT':
                         elem['name'] = 'Swift'; break;
                     case 'KOTLIN':
                         elem['name'] = 'Kotlin'; break;
                     case 'OBJECTIVEC':
-                        elem['name'] = 'Objective-C'; break;
+                        elem['name'] = 'Obj-C'; break;
                     case 'RUBY':
                         elem['name'] = 'Ruby'; break;
                     case 'DART':

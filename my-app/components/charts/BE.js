@@ -66,8 +66,8 @@ export default class BE extends PureComponent {
     render() {
         return (
             <Treemap
-                width={500}
-                height={500}
+                width={900}
+                height={250}
                 data={this.state.data}
                 dataKey="size"
                 ratio={4 / 3}
