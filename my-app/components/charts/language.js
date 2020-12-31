@@ -4,7 +4,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, Tooltip} from 'recharts';
 const CustomTooltip = ({active, payload, label}) => {
   const tooltip = {
     backgroundColor: '#e8e8e8',
-		opacity: '0.8',
+		opacity: '0.9',
 		borderRadius: '5px',			
 		padding: '15px'
   }

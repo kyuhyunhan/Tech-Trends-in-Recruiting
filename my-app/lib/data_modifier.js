@@ -199,6 +199,7 @@ function modifyDatabase(data) {
                 }
                 return elem;
             })
+            .filter((elem) => elem.value > 1);
     data['database'] = modifiedDatabaseData;
     return data;
 }
