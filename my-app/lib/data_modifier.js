@@ -238,7 +238,8 @@ function modifyLanguage(data) {
                         elem['name'] = 'Perl'; break;
                 }
                 return elem;
-            });
+            })
+            .filter((elem) => elem.value > 1);
     data['language'] = modifiedLanguageData;
     return data;
 }
