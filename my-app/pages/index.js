@@ -54,7 +54,7 @@ export default function Home({ data }) {
           </span>
 
           <span className={`${styles.chart} ${styles.statemgmt}`}>
-            <h3>상태 관리 라이브러리</h3>
+            <h3>프론트엔드 상태 관리 라이브러리</h3>
             <FE_StateMgmt data={data.FE.stateMgmtLibs}/>
           </span>
 
@@ -79,7 +79,7 @@ export default function Home({ data }) {
           </span>
 
           <span className={`${styles.chart} ${styles.etc}`}>
-            <h3>그 외 기술 키워드 TOP10</h3>
+            <h3>기타 기술 키워드 TOP10</h3>
             listing
           </span>
         </div>

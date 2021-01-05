@@ -1,83 +1,47 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, Tooltip} from 'recharts';
 
-const renderActiveShape = (props) => {
-    const RADIAN = Math.PI / 180;
-    const {
-      cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
-      fill, payload, percent, value,
-    } = props;
-    const sin = Math.sin(-RADIAN * midAngle);
-    const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-    const ey = my;
-    const textAnchor = cos >= 0 ? 'start' : 'end';
-  
+const CustomTooltip = ({active, payload, label}) => {
+  const tooltip = {
+    backgroundColor: '#e8e8e8',
+		opacity: '0.9',
+		borderRadius: '5px',			
+		padding: '15px'
+  }
+  if(active) {
     return (
-      <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
-        <Sector
-          cx={cx}
-          cy={cy}
-          innerRadius={innerRadius}
-          outerRadius={outerRadius}
-          startAngle={startAngle}
-          endAngle={endAngle}
-          fill={fill}
-        />
-        <Sector
-          cx={cx}
-          cy={cy}
-          startAngle={startAngle}
-          endAngle={endAngle}
-          innerRadius={outerRadius + 6}
-          outerRadius={outerRadius + 10}
-          fill={fill}
-        />
-        <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
-        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-          {`(Rate ${(percent * 100).toFixed(2)}%)`}
-        </text>
-      </g>
+      <div className="custom-tooltip">
+        <p className="label" style={tooltip}>{`${(label=='Obj-C'?'Objective-C':(label=='JS')?'JavaScript':(label=='TS')?'TypeScript':label)} : ${payload[0].value}`}</p>
+      </div>
     );
-  };
+  }
+  return null;
+}
 
-export default class FE_StateMgmt extends PureComponent {
-    constructor(props) {
+ 
+export default class Language extends PureComponent {
+    constructor(props){
         super(props);
-        this.state = {
-            data: this.props.data,
-            activeIndex: 0,
+        this.state =  {
+            data : this.props.data
         }
-    }
-    onPieEnter = (data, index) => {
-        this.setState({
-          activeIndex: index,
-        });
-      };
-    
+      }
+
     render() {
-        return (
-        <PieChart width={400} height={400}>
-            <Pie
-                activeIndex={this.state.activeIndex}
-                activeShape={renderActiveShape}
-                data={this.state.data}
-                cx={250}
-                cy={150}
-                innerRadius={60}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-                onMouseEnter={this.onPieEnter}
-            />
-        </PieChart>
-        );
-    }
+      return (
+        <BarChart
+          width={500}
+          height={380}
+          data={this.state.data}
+          margin={{
+            top: 50, right: 30, left: 0, bottom: 5,
+          }}
+        >
+          <XAxis dataKey="name" fontSize={15} />
+          <YAxis />
+          <Tooltip content={<CustomTooltip/>}/>
+          <Bar dataKey="value" fill="#8884d8" />
+        </BarChart>
+    );
+  }
 }
