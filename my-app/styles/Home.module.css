@@ -56,13 +56,12 @@
   justify-content: space-evenly;
   /* align-items: center;
   justify-items: center; */
-  grid-template-rows: repeat(4, 500px);
+  grid-template-rows: repeat(3, 500px);
   grid-template-columns: repeat(3, 600px);
   grid-template-areas: 
     "language language database"
     "fetop3 statemgmt feetc"
-    "backend backend mobile"
-    "mldata mldata etc";
+    "backend mobile mldata";
   max-width: 1800px;
   border-radius: 15px;
 }

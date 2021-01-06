@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, Tooltip} from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip} from 'recharts';
 
 const CustomTooltip = ({active, payload, label}) => {
   const tooltip = {
@@ -12,7 +12,7 @@ const CustomTooltip = ({active, payload, label}) => {
     return (
       <div className="custom-tooltip">
         <p className="label" style={tooltip}>{`${(label=='Obj-C'?'Objective-C':(label=='JS')?'JavaScript':(label=='TS')?'TypeScript':label)} : ${payload[0].value}`}</p>
-      </div>
+      </div> 
     );
   }
   return null;

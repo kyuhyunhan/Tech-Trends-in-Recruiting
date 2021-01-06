@@ -2,7 +2,7 @@ import { PureComponent } from "react";
 import { Treemap, Tooltip } from 'recharts';
 
 
-const COLORS = ['#8889DD', '#9597E4', '#8DC77B', '#A5D297', '#E2CF45', '#F8C12D'];
+const COLORS = ['#FFBB28', '#FF8042', '#0088FE',  '#ff3029', '#8884d8', '#c7c7c7'];
 
 class CustomizedContent extends PureComponent {
   render() {
@@ -24,6 +24,7 @@ class CustomizedContent extends PureComponent {
             strokeOpacity: 1 / (depth + 1e-10),
           }}
         />
+
         {
           depth === 1 ? (
             <text
@@ -31,22 +32,9 @@ class CustomizedContent extends PureComponent {
               y={y + height / 2 + 7}
               textAnchor="middle"
               fill="#fff"
-              fontSize={14}
+              fontSize={20}
             >
-              {name}
-            </text>
-          ) : null
-        }
-        {
-          depth === 1 ? (
-            <text
-              x={x + 4}
-              y={y + 18}
-              fill="#fff"
-              fontSize={16}
-              fillOpacity={0.9}
-            >
-              {index + 1}
+              {(name=='JS')?'JavaScript':name}
             </text>
           ) : null
         }
@@ -55,6 +43,23 @@ class CustomizedContent extends PureComponent {
   }
 }
 
+const CustomTooltip = ({active, payload, label}) => {
+  const tooltip = {
+    backgroundColor: '#e8e8e8',
+		opacity: '0.9',
+		borderRadius: '5px',			
+		padding: '15px'
+  }
+  console.log(payload);
+  if(active) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label" style={tooltip}>{`${payload[0].payload.name} : ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+  return null;
+}
 
 export default class BE extends PureComponent {
     constructor(props) {
@@ -66,16 +71,17 @@ export default class BE extends PureComponent {
     render() {
         return (
             <Treemap
-                width={900}
-                height={250}
+                width={500}
+                height={300}
                 data={this.state.data}
                 dataKey="size"
                 ratio={4 / 3}
                 stroke="#fff"
                 fill="#8884d8"
                 content={<CustomizedContent colors={COLORS} />}
+                style={{marginTop:50}}
             >
-                <Tooltip />
+                <Tooltip content={<CustomTooltip/>}/>
             </Treemap>
         );
       }

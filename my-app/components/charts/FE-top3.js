@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, Legend } from 'recharts';
+import { PieChart, Pie, Cell, Legend } from 'recharts';
 
 const COLORS = ['#28c4eb', '#00C49F', '#ff3029'];
 
@@ -9,14 +9,14 @@ export default class FE_Top3 extends PureComponent {
         this.state = {
             data: this.props.data
         };
-    }
+    } 
     render() {
         return (
           <PieChart width={520} height={400} onMouseEnter={this.onPieEnter}>
             <Pie
               data={this.state.data}
               cx={250}
-              cy={250}
+              cy={230}
               startAngle={180}
               endAngle={0}
               innerRadius={50}

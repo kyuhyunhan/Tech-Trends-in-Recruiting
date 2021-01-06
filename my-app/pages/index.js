@@ -49,7 +49,7 @@ export default function Home({ data }) {
           </span>
 
           <span className={`${styles.chart} ${styles.fetop3}`}>
-            <h3>React.js / VUE.js / Angular.js</h3>
+            <h3>프론트엔드 프레임워크</h3>
             <FE_Top3 data={data['FE']['top3Framework']}/>
           </span>
 
@@ -64,12 +64,12 @@ export default function Home({ data }) {
           </span>
 
           <span className={`${styles.chart} ${styles.backend}`}>
-            <h3>웹 백엔드</h3>
+            <h3>웹 백엔드 관련 기술</h3>
             <BE data={data.BE}/>
           </span>
           
           <span className={`${styles.chart} ${styles.mobile}`}>
-            <h3>Cross-platform mobile</h3>
+            <h3>크로스플랫폼 모바일 프레임워크</h3>
             <CPM data={data.cross_platform_mobile}/>
           </span>
 
@@ -77,11 +77,11 @@ export default function Home({ data }) {
             <h3>머신러닝 / 데이터 엔지니어링</h3>
             <ML_Data data={data.ML_data}/>
           </span>
-
+{/* 
           <span className={`${styles.chart} ${styles.etc}`}>
             <h3>기타 기술 키워드 TOP10</h3>
             listing
-          </span>
+          </span> */}
         </div>
 
       </main>
@@ -99,32 +99,9 @@ export default function Home({ data }) {
     </Layout>
   )
 }
-// sortByValue() module
-// correctString() module
 export async function getStaticProps() {
   const rawData = fs.readFileSync('./dataset/test1224.json');
-  let data = JSON.parse(rawData);
-
-  data = modifyData(data);
-
-  // const date = data['date'];
-  // const language = data['language'];
-  // const database = data['database'];
-  // const FE_top3Framework = data['FE']['top3Framework'];
-  // const FE_stateMgmtLibs = data['FE']['stateMgmtLibs'];
-  // const FE_FEEtc = data['FE']['FEEtc'];
-  // const BE_JS = data['BE']['JS'];
-  // const BE_Java = data['BE']['Java'];
-  // const BE_Python = data['BE']['Python'];
-  // const BE_Ruby = data['BE']['Ruby'];
-  // const BE_PHP = data['BE']['PHP'];
-  // const BE_BEEtc = data['BE']['BEEtc'];
-  // const cross_platform_mobile = data['cross_platform_mobile'];
-  // const ML_data = data['ML_data'];
-  // const ambiguity = data['ambiguity'];
-  // const JS_testing = data['JS_testing'];
-  // const etc = data['etc'];
-
+  const data = modifyData(JSON.parse(rawData));
   return {
     props: {
       data
