@@ -1,19 +1,26 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import fs from 'fs';
-import Layout from '../components/layout';
+import Layout from '../Components/Layout';
 import modifyData from '../lib/data_modifier'
 
-import Language from '../components/charts/language';
-import Database from '../components/charts/database';
-import FE_Top3 from '../components/charts/FE-top3';
-import FE_StateMgmt from '../components/charts/FE-SML';
-import FE_FEEtc from '../components/charts/FE-etc';
-import BE from '../components/charts/BE';
-import CPM from '../components/charts/CPM';
-import ML_Data from '../components/charts/ML-data';
+import Language from '../Components/charts/Language';
+import Database from '../Components/charts/Database';
+import FE_Top3 from '../Components/charts/FE-top3';
+import FE_StateMgmt from '../Components/charts/FE-SML';
+import FE_FEEtc from '../Components/charts/FE-etc';
+import BE from '../Components/charts/BE';
+import CPM from '../Components/charts/CPM';
+import ML_Data from '../Components/charts/ML-data';
+import SummaryBox from '../Components/SummaryBox';
 
 export default function Home({ data }) {
+  const summaryBoxTitle = ['가장 공고가 많은 언어', '가장 공고가 많은 데이터베이스', '확인된 회사 수', '확인된 공고 수'];
+  const summaryBoxDetail = [data.language[0]['name'],data.database[0]['name'], data.companyCount, data.postCount];
+  const summaryBox = summaryBoxTitle.map((title,index) => {
+    return <SummaryBox title={title} detail={summaryBoxDetail[index]}></SummaryBox>
+  })
+
   return (
     <Layout date={data.date}>
       <Head>
@@ -23,18 +30,7 @@ export default function Home({ data }) {
       <main className={styles.main}>
         
         <div className={styles.summaryInfo}>
-          <div className={styles.box}>
-            <h3>가장 공고가 많은 언어</h3>
-          </div>
-          <div className={styles.box}>
-            <h3>가장 공고가 많은 데이터베이스</h3>
-          </div>
-          <div className={styles.box}>
-            <h3>확인된 회사 수</h3>
-          </div>
-          <div className={styles.box}>
-            <h3>확인된 공고 수</h3>
-          </div>
+          {summaryBox}
         </div>
 
         <div className={styles.chartsGrid}>
@@ -100,7 +96,7 @@ export default function Home({ data }) {
   )
 }
 export async function getStaticProps() {
-  const rawData = fs.readFileSync('./dataset/test1224.json');
+  const rawData = fs.readFileSync('./dataset/test210109.json');
   const data = modifyData(JSON.parse(rawData));
   return {
     props: {

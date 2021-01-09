@@ -58,7 +58,7 @@ export default function modifyBE(data) {
     const modifiedRubyData = Object.keys(rawRubyData).map((key) =>{
         switch(key) {
             case 'RUBYONRAILS':
-                return {name:'RubyOnRails', size:rawRubyData[key]};
+                return {name:'Ruby on Rails', size:rawRubyData[key]};
             default:
                 return {name:key, size:rawRubyData[key]};
         }

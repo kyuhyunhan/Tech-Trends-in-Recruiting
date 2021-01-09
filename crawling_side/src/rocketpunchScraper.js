@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://www.rocketpunch.com/jobs?job=1&page=44',
+    url: 'https://www.rocketpunch.com/jobs?job=1',
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -22,7 +22,8 @@ const scraperObject = {
                 let newPage = await browser.newPage();
                 await newPage.setDefaultNavigationTimeout(0);
                 await newPage.goto(link);
-
+                await newPage.waitForSelector('#company-jobs');
+                
                 dataObj['source'] = 'rocketpunch';
                 dataObj['postCompany'] = await newPage.$eval('#company-name', el => el.textContent);
                 dataObj['postTitle'] = [];
@@ -58,6 +59,7 @@ const scraperObject = {
                     let detailPage = await browser.newPage();
                     await detailPage.setDefaultNavigationTimeout(0);
                     await detailPage.goto(url);
+                    await detailPage.waitForSelector('#wrap');
                     
                     let partialTechStack = await detailPage.$$eval('#wrap > .job-content > .row > .job-specialties > a', stack => {
                         stack = stack.map(tech => tech.textContent);

@@ -89,7 +89,7 @@ export default class Database extends PureComponent {
           content={<CustomTooltip/>}
         />
         <Legend 
-          wrapperStyle={{ marginTop: "80px"}} 
+          wrapperStyle={{ marginTop: "60px"}} 
           iconSize="15" 
           layout='vertical' 
           verticalAlign="top" 

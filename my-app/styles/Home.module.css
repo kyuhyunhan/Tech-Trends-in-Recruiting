@@ -12,26 +12,7 @@
   display: flex;
   justify-content: space-between;
 }
-.box {
-  background-color: white;
-  padding: 1.5rem;
-  width: 400px;
-  height: 200px;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-.box:hover,
-.box:focus,
-.box:active {
-  border-color: #0070f3;
-}
-.box h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid #d6d4d4;
-}
+
 
 
 /* .title {

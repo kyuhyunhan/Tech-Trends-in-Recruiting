@@ -43,3 +43,6 @@ my-app/.vercel
 
 # dataset
 my-app/dataset
+
+# .DS_Store
+.DS_Store
