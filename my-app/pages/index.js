@@ -6,12 +6,12 @@ import modifyData from '../lib/data_modifier.js'
 
 import Language from '../components/charts/language.js';
 import Database from '../components/charts/database.js';
-import FE_Top3 from '../components/charts/fe_top3.js';
-import FE_StateMgmt from '../components/charts/fe_sml.js';
-import FE_FEEtc from '../components/charts/fe_etc.js';
+import FE_Top3 from '../components/charts/fetop3.js';
+import FE_StateMgmt from '../components/charts/fesml.js';
+import FE_FEEtc from '../components/charts/feetc.js';
 import BE from '../components/charts/be.js';
 import CPM from '../components/charts/cpm.js';
-import ML_Data from '../components/charts/ml_data.js';
+import ML_Data from '../components/charts/mldata.js';
 import SummaryBox from '../components/indexcomponents/summarybox.js';
 
 export default function Home({ data }) {
