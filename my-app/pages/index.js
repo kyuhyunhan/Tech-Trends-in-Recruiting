@@ -12,7 +12,7 @@ import FE_FEEtc from '../components/charts/FE-etc';
 import BE from '../components/charts/BE';
 import CPM from '../components/charts/CPM';
 import ML_Data from '../components/charts/ML-data';
-import SummaryBox from '../components/SummaryBox';
+import SummaryBox from '../components/summaryBox';
 
 export default function Home({ data }) {
   const summaryBoxTitle = ['가장 공고가 많은 언어', '가장 공고가 많은 데이터베이스', '확인된 회사 수', '확인된 공고 수'];
