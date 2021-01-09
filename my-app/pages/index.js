@@ -4,15 +4,15 @@ import fs from 'fs';
 import Layout from '../components/layout';
 import modifyData from '../lib/data_modifier'
 
-import Language from '../components/charts/Language';
-import Database from '../components/charts/Database';
-import FE_Top3 from '../components/charts/FE-top3';
-import FE_StateMgmt from '../components/charts/FE-SML';
-import FE_FEEtc from '../components/charts/FE-etc';
-import BE from '../components/charts/BE';
-import CPM from '../components/charts/CPM';
-import ML_Data from '../components/charts/ML-data';
-import SummaryBox from '../components/summaryBox';
+import Language from '../components/charts/language';
+import Database from '../components/charts/database';
+import FE_Top3 from '../components/charts/fe-top3';
+import FE_StateMgmt from '../components/charts/fe-sml';
+import FE_FEEtc from '../components/charts/fe-etc';
+import BE from '../components/charts/be';
+import CPM from '../components/charts/cpm';
+import ML_Data from '../components/charts/ml-data';
+import SummaryBox from '../components/summarybox';
 
 export default function Home({ data }) {
   const summaryBoxTitle = ['가장 공고가 많은 언어', '가장 공고가 많은 데이터베이스', '확인된 회사 수', '확인된 공고 수'];

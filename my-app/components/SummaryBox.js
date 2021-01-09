@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './summaryBox.module.css';
+import styles from './summarybox.module.css';
 
 const SummaryBox = ( props ) => {
     return (
