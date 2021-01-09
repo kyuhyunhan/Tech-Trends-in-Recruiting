@@ -9,6 +9,8 @@ module.exports = function skillCounter(fullDataResult) {
 
     let skillCount =  {
         "date": time,
+        "postCount": 0,
+        "companyCount": 0,
         "language": {},
         "FE": {
             "top3Framework":{},

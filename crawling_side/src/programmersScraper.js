@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://programmers.co.kr/job?page=35',
+    url: 'https://programmers.co.kr/job?page=36',
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -7,6 +7,7 @@ const scraperObject = {
         await page.goto(this.url);
 
         let scrapedData = [];
+        let companies = [];
 
         async function scrapeCurrentPage(){
             await page.waitForSelector('#tab_position');
@@ -42,6 +43,9 @@ const scraperObject = {
             for (const link of urls) {
                 let currentPageData = await pagePromise(link);
                 scrapedData.push(currentPageData);
+                if(!companies.includes(currentPageData['postCompany'])) {
+                    companies.push(currentPageData['postCompany']);
+                }
             }
             
             // [다음] 버튼 href value를 이용해서 마지막 페이지까지 재귀적으로 탐색
@@ -53,7 +57,9 @@ const scraperObject = {
                 return scrapeCurrentPage();
             }
             await page.close();
-            return scrapedData;
+
+            // 배열의 제일 마지막에 회사 수를 포함해 보낸다.
+            return [...scrapedData, {'progCompanyCount': companies.length}];
         }
         let data = await scrapeCurrentPage();
         return data;
