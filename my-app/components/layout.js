@@ -1,4 +1,3 @@
-import { getStaticProps } from '../pages';
 import styles from './layout.module.css';
 
 export default function Layout({ children, date }) {
