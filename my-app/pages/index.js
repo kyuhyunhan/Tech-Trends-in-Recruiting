@@ -18,7 +18,7 @@ export default function Home({ data }) {
   const summaryBoxTitle = ['가장 공고가 많은 언어', '가장 공고가 많은 데이터베이스', '확인된 회사 수', '확인된 공고 수'];
   const summaryBoxDetail = [data.language[0]['name'],data.database[0]['name'], data.companyCount, data.postCount];
   const summaryBox = summaryBoxTitle.map((title,index) => {
-    return <SummaryBox title={title} detail={summaryBoxDetail[index]}></SummaryBox>
+    return <SummaryBox title={title} detail={summaryBoxDetail[index]} key={index+1}></SummaryBox>
   })
 
   return (

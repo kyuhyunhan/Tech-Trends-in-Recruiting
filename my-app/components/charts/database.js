@@ -90,7 +90,7 @@ export default class Database extends PureComponent {
         />
         <Legend 
           wrapperStyle={{ marginTop: "60px"}} 
-          iconSize="15" 
+          iconSize={15} 
           layout='vertical' 
           verticalAlign="top" 
           align='right'

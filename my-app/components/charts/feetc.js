@@ -45,7 +45,7 @@ export default class FE_FEEtc extends React.Component {
                 <ListGroup>
                     {
                         this.state.data.slice(5,10).map((entry, index) => {
-                            return <ListGroup.Item style={itemStyle}>
+                            return <ListGroup.Item style={itemStyle} key={index+1}>
                                         <div style={itemInternalStyle}>
                                             <span>
                                                 {index+6}.&nbsp;{entry.label}
