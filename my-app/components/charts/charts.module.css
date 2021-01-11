@@ -1,0 +1,49 @@
+.chartsGrid {
+    grid-area: chartsGrid;
+    display: grid;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    /* align-items: center;
+    justify-items: center; */
+    grid-template-rows: repeat(3, 500px);
+    grid-template-columns: repeat(3, 600px);
+    grid-template-areas: 
+      "language language database"
+      "fetop3 statemgmt feetc"
+      "backend mobile mldata";
+    max-width: 1800px;
+    border-radius: 15px;
+}
+.language { grid-area: language; }
+.database { grid-area: database; }
+.fetop3 { grid-area: fetop3; }
+.statemgmt { grid-area: statemgmt; }
+.feetc { grid-area: feetc; }
+.backend { grid-area: backend; }
+.mobile { grid-area: mobile; }
+.mldata { grid-area: mldata; }
+.etc { grid-area: etc; }
+
+.chart {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+.chart:hover,
+.chart:focus,
+.chart:active {
+    /* color: #0070f3; */
+    border-color: #0070f3;
+}
+.chart h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #d6d4d4;
+}

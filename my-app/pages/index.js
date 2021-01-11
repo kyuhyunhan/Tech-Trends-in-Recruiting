@@ -4,23 +4,11 @@ import fs from 'fs';
 import Layout from '../components/layout.js';
 import modifyData from '../lib/data_modifier.js'
 
-import Language from '../components/charts/language.js';
-import Database from '../components/charts/database.js';
-import FE_Top3 from '../components/charts/fetop3.js';
-import FE_StateMgmt from '../components/charts/fesml.js';
-import FE_FEEtc from '../components/charts/feetc.js';
-import BE from '../components/charts/be.js';
-import CPM from '../components/charts/cpm.js';
-import ML_Data from '../components/charts/mldata.js';
-import SummaryBox from '../components/indexcomponents/summarybox.js';
+import Summary from '../components/summary/summary.js';
+import Charts from '../components/charts/charts.js';
 
 export default function Home({ data }) {
-  const summaryBoxTitle = ['가장 공고가 많은 언어', '가장 공고가 많은 데이터베이스', '확인된 회사 수', '확인된 공고 수'];
-  const summaryBoxDetail = [data.language[0]['name'],data.database[0]['name'], data.companyCount, data.postCount];
-  const summaryBox = summaryBoxTitle.map((title,index) => {
-    return <SummaryBox title={title} detail={summaryBoxDetail[index]} key={index+1}></SummaryBox>
-  })
-
+  
   return (
     <Layout date={data.date}>
       <Head>
@@ -29,55 +17,11 @@ export default function Home({ data }) {
 
       <main className={styles.main}>
         
-        <div className={styles.summaryInfo}>
-          {summaryBox}
+        <div className={styles.summary}>
+          <Summary data={data} />
         </div>
-
-        <div className={styles.chartsGrid}>
-          <span className={`${styles.chart} ${styles.language}`}>
-            <h3>언어</h3>
-            <Language data={data.language}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.database}`}>
-            <h3>데이터 베이스</h3>
-            <Database data={data.database}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.fetop3}`}>
-            <h3>프론트엔드 프레임워크</h3>
-            <FE_Top3 data={data['FE']['top3Framework']}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.statemgmt}`}>
-            <h3>프론트엔드 상태 관리 라이브러리</h3>
-            <FE_StateMgmt data={data.FE.stateMgmtLibs}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.feetc}`}>
-            <h3>그 외 프론트엔드 기술</h3>
-            <FE_FEEtc data={data.FE.FEEtc}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.backend}`}>
-            <h3>웹 백엔드 관련 기술</h3>
-            <BE data={data.BE}/>
-          </span>
-          
-          <span className={`${styles.chart} ${styles.mobile}`}>
-            <h3>크로스플랫폼 모바일 프레임워크</h3>
-            <CPM data={data.cross_platform_mobile}/>
-          </span>
-
-          <span className={`${styles.chart} ${styles.mldata}`}>
-            <h3>머신러닝 / 데이터 엔지니어링</h3>
-            <ML_Data data={data.ML_data}/>
-          </span>
-{/* 
-          <span className={`${styles.chart} ${styles.etc}`}>
-            <h3>기타 기술 키워드 TOP10</h3>
-            listing
-          </span> */}
+        <div>
+          <Charts data={data} />
         </div>
 
       </main>
