@@ -40,7 +40,7 @@ export default function Home({ data }) {
   )
 }
 export async function getStaticProps() {
-  const rawData = fs.readFileSync('./dataset/test210109.json');
+  const rawData = fs.readFileSync('./dataset/210109.json');
   const data = modifyData(JSON.parse(rawData));
   return {
     props: {

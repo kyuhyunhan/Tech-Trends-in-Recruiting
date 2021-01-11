@@ -42,7 +42,7 @@ my-app/.env.production.local
 my-app/.vercel
 
 # dataset
-my-app/dataset
+# my-app/dataset
 
 # .DS_Store
 .DS_Store
