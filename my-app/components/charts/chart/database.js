@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { PieChart, Pie, Sector, Cell, Legend, Tooltip } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F','#FFBB28', '#FF8042', '#b800ae',  '#ff3029', '#00dbc9', '#ffa1fa', '#bcc1f7', '#fffd8a', '#ffe48a'];
@@ -37,7 +37,7 @@ const CustomTooltip = ({active, payload}) => {
   return null;
 }
 
-export default class Database extends PureComponent {
+export default class Database extends React.Component {
   constructor(props) {
       super(props);
       this.state = {

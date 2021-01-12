@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const CustomTooltip = ({active, payload, label}) => {
@@ -19,7 +19,7 @@ const CustomTooltip = ({active, payload, label}) => {
 }
 
 
-export default class ML_Data extends PureComponent {
+export default class ML_Data extends React.Component {
     constructor(props){
         super(props);
         this.state =  {

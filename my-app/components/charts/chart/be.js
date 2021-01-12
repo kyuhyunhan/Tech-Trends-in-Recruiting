@@ -1,10 +1,10 @@
-import { PureComponent } from "react";
+import React from "react";
 import { Treemap, Tooltip } from 'recharts';
 
 
 const COLORS = ['#FFBB28', '#FF8042', '#0088FE',  '#ff3029', '#8884d8', '#c7c7c7'];
 
-class CustomizedContent extends PureComponent {
+class CustomizedContent extends React.Component {
   render() {
     const {
       root, depth, x, y, width, height, index, payload, colors, rank, name,
@@ -61,7 +61,7 @@ const CustomTooltip = ({active, payload, label}) => {
   return null;
 }
 
-export default class BE extends PureComponent {
+export default class BE extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

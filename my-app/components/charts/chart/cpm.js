@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { PieChart, Pie, Legend, Cell } from 'recharts';
 
 const COLORS = ['#28c4eb', '#0088FE', '#212121'];
 
-export default class CPM extends PureComponent {
+export default class CPM extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
