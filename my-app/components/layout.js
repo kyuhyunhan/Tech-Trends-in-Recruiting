@@ -25,10 +25,20 @@ export default function Layout({ children, date }) {
                 본 페이지에서 제공하는 정보의 사용/공유로 인해 발생된 문제의 책임은 전적으로 사용자에게 있습니다.
             </div>
 
-            <div className={styles.chlidren}>
+            <main className={styles.chlidren}>
                 { children }
-            </div>
+            </main>
 
+            <footer className={styles.footer}>
+                <a
+                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                Powered by{' '}
+                <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+                </a>
+            </footer>
         </div>
     )
 }

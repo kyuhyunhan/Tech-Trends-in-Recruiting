@@ -12,11 +12,11 @@ export default class CPM extends React.Component {
     }
     render() {
         return (
-          <PieChart width={520} height={400} onMouseEnter={this.onPieEnter}>
+          <PieChart width={390} height={300} onMouseEnter={this.onPieEnter}>
             <Pie
               data={this.state.data}
-              cx={250}
-              cy={230}
+              cx={185}
+              cy={180}
               startAngle={180}
               endAngle={0}
               innerRadius={50}

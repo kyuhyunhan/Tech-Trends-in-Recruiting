@@ -30,11 +30,11 @@ export default class Language extends React.Component {
     render() {
       return (
         <BarChart
-          width={500}
-          height={380}
+          width={375}
+          height={285}
           data={this.state.data}
           margin={{
-            top: 50, right: 30, left: 0, bottom: 5,
+            top: 30, right: 30, left: 0, bottom: 20,
           }}
         >
           <XAxis dataKey="name" fontSize={15} />

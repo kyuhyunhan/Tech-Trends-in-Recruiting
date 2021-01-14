@@ -32,7 +32,7 @@ class CustomizedContent extends React.Component {
               y={y + height / 2 + 7}
               textAnchor="middle"
               fill="#fff"
-              fontSize={20}
+              fontSize={15}
             >
               {(name=='JS')?'JavaScript':name}
             </text>
@@ -71,15 +71,15 @@ export default class BE extends React.Component {
     render() {
         return (
             <Treemap
-                width={500}
-                height={300}
+                width={375}
+                height={225}
                 data={this.state.data}
                 dataKey="size"
                 ratio={4 / 3}
                 stroke="#fff"
                 fill="#8884d8"
                 content={<CustomizedContent colors={COLORS} />}
-                style={{marginTop:50}}
+                style={{marginTop:37}}
             >
                 <Tooltip content={<CustomTooltip/>}/>
             </Treemap>

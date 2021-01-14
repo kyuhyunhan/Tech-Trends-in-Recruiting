@@ -36,7 +36,7 @@ export default function modifyLanguage(data) {
                 }
                 return elem;
             })
-            .filter((elem) => elem.value > 1);
+            .filter((elem) => elem.value > 5);
     data['language'] = modifiedLanguageData;
     return data;
 }

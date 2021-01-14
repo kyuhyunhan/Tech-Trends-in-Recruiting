@@ -1,12 +1,12 @@
 .chartsGrid {
+    width: 70%;
+    margin: auto;
     grid-area: chartsGrid;
     display: grid;
     align-content: space-evenly;
     justify-content: space-evenly;
-    /* align-items: center;
-    justify-items: center; */
-    grid-template-rows: repeat(3, 500px);
-    grid-template-columns: repeat(3, 600px);
+    grid-template-rows: repeat(3, 375px);
+    grid-template-columns: repeat(3, 450px);
     grid-template-areas: 
       "language language database"
       "fetop3 statemgmt feetc"

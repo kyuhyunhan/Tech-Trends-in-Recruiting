@@ -62,13 +62,13 @@ export default class Database extends React.Component {
     const { activeIndex } = this.state;
 
     return (
-      <PieChart width={530} height={400}>
+      <PieChart width={397} height={300}>
         <Pie
           data={this.state.data}
-          cx={160}
-          cy={180}
+          cx={100}
+          cy={100}
           labelLine={false}
-          outerRadius={130}
+          outerRadius={80}
           fill="#8884d8"
           dataKey="value"
           onMouseEnter={this.handleMouseEnter}
@@ -89,8 +89,7 @@ export default class Database extends React.Component {
           content={<CustomTooltip/>}
         />
         <Legend 
-          wrapperStyle={{ marginTop: "60px"}} 
-          iconSize={15} 
+          iconSize={10} 
           layout='vertical' 
           verticalAlign="top" 
           align='right'

@@ -1,8 +1,9 @@
 .box {
     background-color: white;
+    margin: 0 1rem;
     padding: 1.5rem;
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     border: 1px solid #eaeaea;
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
@@ -14,7 +15,7 @@
   }
   .box h3 {
     margin: 0 0 1rem 0;
-    font-size: 1rem;
+    font-size: .8rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid #d6d4d4;
   }
@@ -22,6 +23,6 @@
 
   .detail {
     text-align: center;
-    margin: 30px;
-    font-size: 50px;
+    margin: 30px 0 auto;
+    font-size: 25px;
   }

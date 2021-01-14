@@ -30,14 +30,14 @@ export default class Language extends React.Component {
     render() {
       return (
         <BarChart
-          width={1100}
-          height={380}
+          width={840}
+          height={285}
           data={this.state.data}
           margin={{
-            top: 50, right: 30, left: 0, bottom: 5,
+            top: 20, right: 30, left: -10, bottom: 20,
           }}
         >
-          <XAxis dataKey="name" fontSize={15} />
+          <XAxis dataKey="name" fontSize={10} />
           <YAxis />
           <Tooltip content={<CustomTooltip/>}/>
           <Bar dataKey="value" fill="#8884d8" />
