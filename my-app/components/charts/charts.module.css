@@ -1,6 +1,4 @@
 .chartsGrid {
-    width: 70%;
-    margin: auto;
     grid-area: chartsGrid;
     display: grid;
     align-content: space-evenly;
@@ -31,16 +29,17 @@
     color: inherit;
     text-decoration: none;
     background-color: white;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    box-shadow: 0 6px 9px #ccc;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /* transition: color 0.15s ease, border-color 0.15s ease; */
 }
-.chart:hover,
+
+/* .chart:hover,
 .chart:focus,
 .chart:active {
-    /* color: #0070f3; */
     border-color: #0070f3;
-}
+} */
 .chart h3 {
     margin: 0 0 1rem 0;
     font-size: 1rem;

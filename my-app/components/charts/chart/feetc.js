@@ -4,17 +4,25 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const flexStyle = {
     display: 'flex',
     justifyContent: 'space-between',
+    boxSizing: 'border-box'
+
 };
 const itemStyle = {
     width: 180,
     height: 45,
     marginBottom: 5,
-    border: '1px solid #d9d9d9'
+    padding: 6,
+    border: '1px solid #d9d9d9',
+    boxSizing: 'border-box'
+
 };
 const itemInternalStyle = {
     display:'flex', 
     justifyContent:'space-between',
-    fontSize: 10
+    paddingTop: 5,
+    fontSize: '.8rem',
+    boxSizing: 'border-box'
+
 }
 export default class FE_FEEtc extends React.Component {
     constructor(props) {

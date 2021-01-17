@@ -4,15 +4,30 @@
     padding: 1.5rem;
     width: 300px;
     height: 150px;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    box-shadow: 0 6px 9px #ccc;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /* transition: color 0.15s ease, border-color 0.15s ease; */
   }
-  .box:hover,
+  .box:hover {
+    animation: enable 0.3s linear;
+  }
+  @keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+  /* .box:hover,
   .box:focus,
   .box:active {
     border-color: #0070f3;
-  }
+  } */
   .box h3 {
     margin: 0 0 1rem 0;
     font-size: .8rem;

@@ -36,8 +36,9 @@ export default class Language extends React.Component {
           margin={{
             top: 20, right: 30, left: -10, bottom: 20,
           }}
+          barSize={30}
         >
-          <XAxis dataKey="name" fontSize={10} />
+          <XAxis dataKey="name" fontSize='.8rem' />
           <YAxis />
           <Tooltip content={<CustomTooltip/>}/>
           <Bar dataKey="value" fill="#8884d8" />

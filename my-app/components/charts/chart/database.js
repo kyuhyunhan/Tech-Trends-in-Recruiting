@@ -62,7 +62,7 @@ export default class Database extends React.Component {
     const { activeIndex } = this.state;
 
     return (
-      <PieChart width={397} height={300}>
+      <PieChart width={370} height={300}>
         <Pie
           data={this.state.data}
           cx={100}
@@ -93,6 +93,7 @@ export default class Database extends React.Component {
           layout='vertical' 
           verticalAlign="top" 
           align='right'
+          wrapperStyle={{fontSize:'.8rem', marginTop:10}}
           // onMouseEnter={this.handleMouseEnter}
           // onMouseLeave={this.handleMouseLeave}
         />

@@ -33,11 +33,12 @@ export default class ML_Data extends React.Component {
           width={375}
           height={285}
           data={this.state.data}
+          barSize={30}
           margin={{
             top: 30, right:40, left: 0, bottom: 20,
           }}
         >
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" fontSize='.8rem' />
           <YAxis />
           <Tooltip content={<CustomTooltip/>}/>
           <Bar dataKey="value" fill="#8884d8" />

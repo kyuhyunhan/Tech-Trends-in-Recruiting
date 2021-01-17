@@ -16,11 +16,11 @@ export default class CPM extends React.Component {
             <Pie
               data={this.state.data}
               cx={185}
-              cy={180}
+              cy={150}
               startAngle={180}
               endAngle={0}
               innerRadius={50}
-              outerRadius={140}
+              outerRadius={100}
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
@@ -31,7 +31,7 @@ export default class CPM extends React.Component {
               }
             </Pie>
             <Legend
-              wrapperStyle={{ marginBottom: "40px", marginRight: "20px"}}
+              wrapperStyle={{ marginBottom: "60px", marginRight: "20px", fontSize: '.8rem'}}
             />
           </PieChart>
         );
