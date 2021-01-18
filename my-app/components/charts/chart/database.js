@@ -22,10 +22,12 @@ const renderCustomizedLabel = ({
 
 const CustomTooltip = ({active, payload}) => {
   const tooltip = {
-    backgroundColor: '#e8e8e8',
+    backgroundColor: 'white',
+    color: '#388087',
 		opacity: '0.9',
-		borderRadius: '5px',			
-		padding: '15px'
+    border: '1px solid #c2edce',
+    borderRadius: '5px',			
+		padding: '10px'
   }
   if(active) {
     return (
