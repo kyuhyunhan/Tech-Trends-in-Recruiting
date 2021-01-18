@@ -4,13 +4,14 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const flexStyle = {
     display: 'flex',
     justifyContent: 'space-between',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    marginTop: 50
 
 };
 const itemStyle = {
     width: 180,
-    height: 45,
-    marginBottom: 5,
+    height: 35,
+    marginBottom: 10,
     padding: 6,
     border: '1px solid #d9d9d9',
     boxSizing: 'border-box'
@@ -19,7 +20,6 @@ const itemStyle = {
 const itemInternalStyle = {
     display:'flex', 
     justifyContent:'space-between',
-    paddingTop: 5,
     fontSize: '.8rem',
     boxSizing: 'border-box'
 

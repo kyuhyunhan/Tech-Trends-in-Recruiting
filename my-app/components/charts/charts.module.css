@@ -9,6 +9,7 @@
       "language language database"
       "fetop3 statemgmt feetc"
       "backend mobile mldata";
+    row-gap: 20px;
     max-width: 1800px;
     border-radius: 15px;
 }

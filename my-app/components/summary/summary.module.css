@@ -2,7 +2,7 @@
     width: 100%;
     grid-area: summaryInfo;
     margin: 1rem auto;
-    margin-top: 3rem;
+    margin: 5rem 0 3rem 0;
     display: flex;
     justify-content: space-between;
   }

@@ -3,7 +3,7 @@
     margin: auto;
     min-height: 100vh;
     padding: 0 0.5rem;
-    background-color: #e6e6e6;
+    background-color: #f6f6f2;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -23,13 +23,17 @@
     padding: 3rem 0 1rem 0;
     border-bottom: 1px solid black;
 }
+
+.title {
+  color: #388087
+}
 .description {
-    width: 100%;
-    grid-area: description;
-    line-height: 1.5;
-    font-size: 1rem;
-    margin: 1rem;
-    padding-left: 2rem;
+  width: 100%;
+  grid-area: description;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 1rem;
+  padding-left: 2rem;
 }  
 .children {
   width: 70%;
@@ -49,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 }
 
 .footer img {

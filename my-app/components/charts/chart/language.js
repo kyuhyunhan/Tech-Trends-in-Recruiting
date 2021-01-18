@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip} from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid} from 'recharts';
 
 const CustomTooltip = ({active, payload, label}) => {
   const tooltip = {
@@ -38,10 +38,11 @@ export default class Language extends React.Component {
           }}
           barSize={30}
         >
+           <CartesianGrid strokeDasharray="3 3" vertical={false}/>
           <XAxis dataKey="name" fontSize='.8rem' />
           <YAxis />
           <Tooltip content={<CustomTooltip/>}/>
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#6fb3b8" />
         </BarChart>
     );
   }
