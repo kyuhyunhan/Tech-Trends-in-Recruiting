@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Sector, Cell, Legend, Tooltip } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F','#FFBB28', '#FF8042', '#b800ae',  '#ff3029', '#00dbc9', '#ffa1fa', '#bcc1f7', '#fffd8a', '#ffe48a'];
+const COLORS = ['#3da3fc', '#00C49F','#f2b530', '#FF8042', '#8884d8',  '#f7635e', '#00dbc9', '#ffa1fa', '#bcc1f7', '#fffd8a', '#ffe48a'];
 
 const RADIAN = Math.PI / 180;
 
@@ -66,7 +66,7 @@ export default class Database extends React.Component {
         <Pie
           data={this.state.data}
           cx={100}
-          cy={100}
+          cy={130}
           labelLine={false}
           outerRadius={80}
           fill="#8884d8"
@@ -93,7 +93,7 @@ export default class Database extends React.Component {
           layout='vertical' 
           verticalAlign="top" 
           align='right'
-          wrapperStyle={{fontSize:'.8rem', marginTop:10}}
+          wrapperStyle={{fontSize:'.8rem', marginTop:30}}
           // onMouseEnter={this.handleMouseEnter}
           // onMouseLeave={this.handleMouseLeave}
         />

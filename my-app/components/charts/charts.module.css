@@ -44,6 +44,7 @@
 .chart h3 {
     margin: 0 0 1rem 0;
     font-size: 1rem;
+    color: #388087;
     padding-bottom: .5rem;
-    border-bottom: 1px solid #d6d4d4;
+    border-bottom: 1px solid #c2edce;
 }

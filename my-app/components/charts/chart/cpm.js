@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Legend, Cell } from 'recharts';
 
-const COLORS = ['#28c4eb', '#0088FE', '#212121'];
+const COLORS = ['#28c4eb', '#0088FE', '#474747'];
 
 export default class CPM extends React.Component {
     constructor(props) {

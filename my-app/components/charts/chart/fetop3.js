@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 
-const COLORS = ['#28c4eb', '#00C49F', '#ff3029'];
+const COLORS = ['#28c4eb', '#00C49F', '#f7635e'];
 
 export default class FE_Top3 extends React.Component {
     constructor(props) {

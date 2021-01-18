@@ -11,7 +11,7 @@ export default function Layout({ children, date }) {
                         </h1>
                     </div>
                     <div>
-                        최종 업데이트: {date}
+                        ⚙️ 최종 업데이트: {date}
                     </div>
                 </span>
                 <span>

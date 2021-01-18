@@ -2,7 +2,7 @@ import React from "react";
 import { Treemap, Tooltip } from 'recharts';
 
 
-const COLORS = ['#FFBB28', '#FF8042', '#0088FE',  '#ff3029', '#8884d8', '#c7c7c7'];
+const COLORS = ['#f2b530', '#FF8042', '#3da3fc',  '#f7635e', '#8884d8', '#c7c7c7'];
 
 class CustomizedContent extends React.Component {
   render() {

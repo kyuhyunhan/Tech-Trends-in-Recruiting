@@ -42,7 +42,7 @@ export default class ML_Data extends React.Component {
           <XAxis dataKey="name" fontSize='.8rem' />
           <YAxis />
           <Tooltip content={<CustomTooltip/>}/>
-          <Bar dataKey="value" fill="#6fb3b8" />
+          <Bar dataKey="value" fill="#6fb3b8" animationBegin={400} animationDuration={1000} animationEasing="linear" />
         </BarChart>
     );
   }
