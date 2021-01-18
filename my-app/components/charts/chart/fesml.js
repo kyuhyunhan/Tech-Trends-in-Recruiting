@@ -3,10 +3,12 @@ import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
 
 const CustomTooltip = ({active, payload, label}) => {
   const tooltip = {
-    backgroundColor: '#e8e8e8',
-		opacity: '0.9',
+    backgroundColor: 'white',
+    color: '#388087',
+    opacity: '0.9',
+    border: '1px solid #c2edce',
 		borderRadius: '5px',			
-		padding: '15px'
+		padding: '10px'
   }
   if(active) {
     return (
